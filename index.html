@@ -1,176 +1,829 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anmaya Agarwal — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060606;
+  --panel: #0D0D0D;
+  --border: #1C1C1C;
+  --border2: #252525;
+  --amber: #FF8C00;
+  --amber-b: #FFB347;
+  --amber-d: #5A3200;
+  --green: #00C853;
+  --red: #FF3D3D;
+  --blue: #2979FF;
+  --white: #EBEBEB;
+  --dim: #E8E8E8;
+  --mono: 'IBM Plex Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.03) 3px,rgba(0,0,0,0.04) 4px);pointer-events:none;z-index:9999}
 
-    <title>Anmaya Agarwal</title>
+/* TOP BAR */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:200;height:34px;background:var(--amber);display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:14px;font-weight:700;color:#000;letter-spacing:0.06em;overflow:hidden}
+.tb-left{display:flex;gap:12px;align-items:center;min-width:0;overflow:hidden}
+.tb-logo{font-size:14px;font-weight:700;letter-spacing:0.12em;white-space:nowrap;flex-shrink:0}
+.tb-sep{opacity:0.35;flex-shrink:0}
+.tb-name{white-space:nowrap;flex-shrink:0}
+.tb-subtitle{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tb-right{display:flex;gap:20px;font-size:14px;flex-shrink:0;white-space:nowrap}
+@media(max-width:700px){.tb-hide-xs{display:none}}
+@media(max-width:480px){.tb-hide-sm{display:none}}
+#tb-time{font-weight:700;letter-spacing:0.08em}
 
-    <meta name="author" content="Anmaya Agarwal">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+/* TICKER */
+.ticker-wrap{position:fixed;top:34px;left:0;right:0;z-index:199;height:28px;background:#0A0A0A;border-bottom:1px solid var(--amber-d);overflow:hidden;display:flex;align-items:center}
+.ticker-label{flex-shrink:0;padding:0 12px;font-size:14px;letter-spacing:0.12em;color:#000;background:var(--amber);height:100%;display:flex;align-items:center;font-weight:700;border-right:2px solid rgba(0,0,0,0.2);gap:6px}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#000;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.25}}
+.ticker-track{flex:1;overflow:hidden;height:100%;position:relative}
+.ticker-inner{display:flex;align-items:center;height:100%;white-space:nowrap;animation:tick 65s linear infinite}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ti{display:inline-flex;align-items:center;gap:8px;padding:0 18px;border-right:1px solid var(--border);height:100%;font-size:14px}
+.ts{color:var(--amber);font-weight:700;letter-spacing:0.04em}
+.tv{color:var(--white)}
+.tc.up{color:var(--green)}
+.tc.dn{color:var(--red)}
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Anmaya Agarwal
-                </p>
-                <p style="text-align: justify;">I am currently pursuing a dual degree consisting of a B. Tech. in Computer Engineering complemented by a MBA in Technology Management with a focus on Finance at NMIMS University, Mumbai. I am very interested in the intersection of Machine Learning and Finance. If you have an interesting project idea, let's get in touch:
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:agranmaya@gmail.com">Email</a> &nbsp;/&nbsp;
-                  <a href="data/Anmaya_Agarwal_Resume.pdf" target=”_blank”>CV</a> &nbsp;/&nbsp;
-        				  <a href="https://www.linkedin.com/in/anmaya-agarwal/" target=”_blank”>LinkedIn</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/Anmaya1856" target=”_blank”>Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="images/anmaya.jpg" target=”_blank”><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/anmaya_square.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p style="text-align: justify;">
-                  I am interested in the application of Machine Learning in various fields. For my bachelor's thesis I worked on applying Machine Learning for the purpose of conservation of marine life. The coursework for my MBA and recent internships at financial institutions have led me to realise my interdisciplinary interest at the intersection of computer science and finance.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;" id="paper_table"><tbody>
+/* NAV */
+.nav{position:fixed;top:62px;left:0;right:0;z-index:198;height:36px;background:var(--panel);border-bottom:1px solid var(--border2);display:flex;align-items:center;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--amber-d) transparent}
+.nav::-webkit-scrollbar{height:2px}
+.nav::-webkit-scrollbar-thumb{background:var(--amber-d)}
+.nav-item{flex-shrink:0;height:100%;display:flex;align-items:center;padding:0 12px;font-size:16px;letter-spacing:0.03em;cursor:pointer;border-right:1px solid var(--border);color:var(--white);transition:background .15s,color .15s;text-decoration:none;white-space:nowrap;gap:4px}
+.nav-item:hover{background:#161616;color:var(--white)}
+.nav-fn{color:var(--amber);font-weight:700}
+.nav-item:hover .nav-fn{color:var(--amber-b)}
+.nav-go{color:var(--white);font-size:13px}
+.nav-item:hover .nav-go{color:var(--amber)}
+.nav-term-btn{flex-shrink:0;height:100%;display:flex;align-items:center;padding:0 12px;font-size:16px;color:var(--amber);cursor:pointer;border-left:1px solid var(--border);font-weight:700;letter-spacing:0.06em;transition:background .15s;gap:5px;white-space:nowrap}
+.nav-term-btn:hover{background:rgba(255,140,0,0.08)}
+@media(max-width:700px){.nav-go{display:none}.nav-item{padding:0 10px;font-size:12px}}
+/* CMD PALETTE */
+#cmd-palette{position:fixed;top:98px;left:0;right:0;z-index:500;background:var(--panel);border-bottom:2px solid var(--amber);display:none}
+#cmd-palette.open{display:block}
+.pal-row{display:flex;align-items:center;height:44px}
+.pal-prompt{padding:0 14px;color:var(--amber);font-weight:700;font-size:16px;flex-shrink:0}
+.pal-input{flex:1;background:transparent;border:none;outline:none;color:var(--white);font-family:var(--mono);font-size:15px;padding:0 8px;height:100%}
+.pal-esc{padding:0 14px;color:var(--dim);font-size:13px;letter-spacing:0.08em;flex-shrink:0}
+.pal-out{padding:8px 56px 10px;font-size:14px;color:var(--green);border-top:1px solid var(--border);display:none;font-weight:300}
 
-            <tr>
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/capm.png" alt="PontTuset" width="100%" style="border-style: none">
-              </td>
-              <td width="75%" valign="middle">
-                <a href="data/Evolution_of_CAPM.pdf" target=”_blank”>
-                  <span class="papertitle">Evolution of the Capital Asset Pricing Model (CAPM) [Book Chapter]</span>
-                </a>
-                <br>
-                <br>
-                <b>Anmaya Agarwal</b>, Pushpit Jain, Dr. Abhay Kumar
-                <br>
-                <br>
-                Currently Under Review for Publication
-                <br>
-                <br>
-                <a href="https://github.com/Anmaya1856/Ex-Ante_CAPM_Vs_Ex-Post_CAPM" target=”_blank”>Project Code</a> /
-                <a href="data/Evolution_of_CAPM.pdf" target=”_blank”>Paper</a> /
-                <p></p>
-                <p>
-                  We evaluated the rate of return using CAPM calculated for forecasted values against traditional CAPM which is based on historical data.
-                </p>
-              </td>
-            </tr>
-            
+main{padding-top:98px}
 
-            <tr>
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/fyp paper.png" alt="PontTuset" width="100%" style="border-style: none">
-              </td>
-              <td width="75%" valign="middle">
-                <a href="https://www.researchsquare.com/article/rs-2782178/v1" target=”_blank”>
-                  <span class="papertitle">Identifying Suspicious Fishing Activity Based on AIS Disabling Events.</span>
-                </a>
-                <br>
-                <br>
-                <b>Anmaya Agarwal</b>, Jay Gala, Saketh Mantha, Yash Katariya, Dr. Prashasti Kanikar
-                <br>
-                <br>
-                In review at the International Journal of Computer Information Systems and Industrial Management Applications
-                <br>
-                <br>
-                <a href="https://github.com/Anmaya1856/iuu-fishing" target=”_blank”>Project Code</a> /
-                <a href="https://www.researchsquare.com/article/rs-2782178/v1" target=”_blank”>Paper</a> /
-                <p></p>
-                <p>
-                  Release of a novel dataset of illegal fishing vessels and machine learning techniques for identifying them. (Extreme class imbalance)
-                </p>
-              </td>
-            </tr>
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 440px;min-height:calc(100vh - 80px);border-bottom:1px solid var(--border2)}
+.hero-left{padding:44px;border-right:1px solid var(--border2);display:flex;flex-direction:column;justify-content:center}
+.hero-path{font-size:14px;color:var(--dim);letter-spacing:0.08em;margin-bottom:22px}
+.hero-path .p-fn{color:var(--amber)}
+.hero-name{font-size:clamp(28px,3.6vw,52px);font-weight:700;color:var(--amber);letter-spacing:0.04em;line-height:1.05;text-shadow:0 0 60px rgba(255,140,0,0.2);margin-bottom:6px}
+.hero-title{font-size:clamp(14px,1.4vw,18px);font-weight:400;color:var(--white);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:32px}
+.cursor{display:inline-block;width:9px;height:1.1em;background:var(--amber);vertical-align:text-bottom;animation:blink 1s step-end infinite;margin-left:2px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.fields{display:flex;flex-direction:column;gap:0;margin-bottom:32px}
+.field{display:flex;gap:0;font-size:14px;border-bottom:1px solid var(--border)}
+.fk{color:var(--amber-b) !important;;width:160px;flex-shrink:0;padding:6px 0;font-size:16px;font-weight: bold;}
+.fv{padding:6px 0;color:var(--white);font-size:16px}
+.fv a{color:var(--amber);text-decoration:none}
+.fv a:hover{color:var(--amber-b)}
+.fv.green{color:var(--green)}
+.fv.blue{color:var(--blue)}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:10px 18px;font-family:var(--mono);font-size:14px;letter-spacing:0.08em;font-weight:600;cursor:pointer;text-decoration:none;border:none;transition:background .15s,color .15s;}
+.btn-p{background:var(--amber);color:#000;font-weight: bold;}
+.btn-p:hover{background:var(--amber-b)}
+.btn-g{background:transparent;color:var(--amber);border:1px solid var(--amber-d)}
+.btn-g:hover{background:rgba(255,140,0,0.07);border-color:var(--amber)}
 
-            <tr>
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/review paper.PNG" alt="PontTuset" width="100%" style="border-style: none">
-              </td>
-              <td width="75%" valign="middle">
-                <a href="data/A_Review_on_Detecting_Suspicious_Fishing_Activity.pdf" target=”_blank”>
-                  <span class="papertitle">A Review on Detecting Suspicious Fishing Activity.</span>
-                </a>
-                <br>
-                <br>
-                <b>Anmaya Agarwal</b>, Jay Gala, Saketh Mantha, Yash Katariya, Dr. Prashasti Kanikar
-                <br>
-                <br>
-                Accepted at International Conference on Intelligent Computing and Networking (Highlight Paper), 2023
-                <br>
-                <br>
-                <a href="data/A_Review_on_Detecting_Suspicious_Fishing_Activity.pdf" target=”_blank”>Paper</a>
-                <p></p>
-                <p>
-                  A review on existing methods to detect Illegal, Unreported and Unregulated fishing. (Proceedings not yet released)
-                </p>
-              </td>
-            </tr>
+/* CHART (TradingView) */
+.hero-right{display:flex;flex-direction:column;background:var(--panel)}
+.chart-hdr{padding:10px 5px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;font-size: 16px;}
+.chart-sym{color:var(--amber);font-weight:700;font-size:14px;letter-spacing:0.06em;display:flex;align-items:center;gap:8px}
+.live-badge{font-size:12px;background:rgba(0,200,83,0.12);border:1px solid rgba(0,200,83,0.3);color:var(--green);padding:2px 8px;letter-spacing:0.1em}
+.chart-meta{color:var(--dim);font-size:13px;letter-spacing:0.05em}
+.chart-tv-wrap{flex:1;min-height:0;position:relative}
+.chart-tv-wrap iframe{display:block}
+.chart-footer{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);flex-shrink:0}
+.cf-item{padding:9px 12px;border-right:1px solid var(--border);font-size:16px}
+.cf-item:last-child{border-right:none}
+.cf-k{color:var(--dim);margin-bottom:3px;font-size:16px}
+.cf-v{font-weight:500}
+.cf-v.g{color:var(--green)}
+.cf-v.r{color:var(--red)}
+.cf-v.a{color:var(--amber)}
 
-            <tr>
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                <img src="images/sas cup paper.PNG" alt="PontTuset" width="100%" style="border-style: none">
-              </td>
-              <td width="75%" valign="middle">
-                <a href="data/SAS_paper.pdf" target=”_blank”>
-                  <span class="papertitle">Enhancing Illegal, Unreported, and Unregulated Fishing Detection through Feature Engineering.</span>
-                </a>
-                <br>
-                <br>
-                Jay Gala, <b>Anmaya Agarwal</b>, Saketh Mantha, Yash Katariya, Dr. Prashasti Kanikar
-                <br>
-                <br>
-                Presented at the SAS Curiosity Cup, 2023 (14th global rank achieved)
-                <br>
-                <br>
-                <a href="data/SAS_paper.pdf" target=”_blank”>Paper</a>
-                <p></p>
-                <p>
-                  Feature engineering on a novel Illegal, Unreported and Unregulated fishing dataset
-                </p>
-              </td>
-            </tr>
-            
-          </tbody></table>
+/* SECTION CHROME */
+.section{border-bottom:1px solid var(--border2)}
+.sec-hdr{padding:0 24px;height:40px;background:var(--panel);border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:14px;font-size:14px;letter-spacing:0.06em;position:sticky;top:98px;z-index:10}
+.sec-fn{color:var(--amber);font-weight:700;background:rgba(255,140,0,0.08);padding:3px 12px;border:1px solid var(--amber-d);font-size:14px;letter-spacing:0.08em;text-transform:uppercase}
+.sec-name{color:var(--white);font-size:14px}
+.sec-hint{margin-left:auto;color:var(--white);font-size:14px}
+.sec-body{padding:32px 40px}
 
-          
-          <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-            <tr>
-              <td>
-                <h2>Experience</h2>
-              </td>
-            </tr>
-          </tbody></table>
-          <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-            
-            <tr>
-              <td style="padding:20px;width:25%;vertical-align:middle"><img src=""></td>
-              <td width="75%" valign="center">
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 240px;gap:48px}
+.about-bullets{font-size:16px;line-height:1.9;color:var(--white);font-weight:400;padding-left:20px;display:flex;flex-direction:column;gap:16px}
+.about-bullets li{list-style:disc;padding-left:6px}
+.about-bullets strong{color:var(--amber-b);font-weight:600}
+.dg-title{font-size:13px;letter-spacing:0.14em;color:var(--amber);text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--border2);margin-bottom:8px;margin-top:20px}
+.dg-title:first-child{margin-top:0}
+.drow{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border);font-size:14px}
+.dk{color:var(--white)}
+.dv{color:var(--white);text-align:right}
+.dv.g{color:var(--green)}
+.dv.a{color:var(--amber)}
 
-                <br>
-              </td>
-            </tr>
-            
-          </tbody></table> -->
-          
-        </td>
-      </tr>
-    </table>
-  </body>
+/* RESEARCH */
+.rsch-item{display:grid;grid-template-columns:52px 1fr;border-bottom:1px solid var(--border);cursor:default;transition:background .15s}
+.rsch-item:hover{background:#101010}
+.rsch-n{padding:22px 0;color:var(--amber);font-size:15px;font-weight:700;border-right:1px solid var(--border);display:flex;align-items:flex-start;justify-content:center;padding-top:24px}
+.rsch-b{padding:20px 24px}
+.rsch-tag{font-size:13px;letter-spacing:0.08em;color:var(--white);text-transform:uppercase;margin-bottom:6px}
+.rsch-title{font-size:18px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.35}
+.rsch-desc{font-size:16px;font-weight:400;color:var(--white);line-height:1.75;margin-bottom:10px}
+.rsch-desc ul{margin-left:18px;display:flex;flex-direction:column;gap:8px}
+.rsch-desc li{list-style:disc;padding-left:4px}
+.rsch-desc strong{color:#E8E8E8;font-weight:600}
+.rsch-foot{display:flex;gap:16px;font-size:14px;flex-wrap:wrap;align-items:center}
+.rsch-foot span{color:var(--amber)}
+.rank-badge{font-size:15px;letter-spacing:0.06em;padding:3px 10px;background:rgba(255,140,0,0.1);border:1px solid var(--amber-d);color:var(--amber-b);font-weight:700}
+
+/* INLINE PUB BADGES */
+.pub-inline{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;letter-spacing:0.06em;padding:2px 8px;text-decoration:none;border:1px solid rgba(0,200,83,0.3);background:rgba(0,200,83,0.08);color:var(--green);margin-left:8px;vertical-align:middle;white-space:nowrap;transition:background .15s,border-color .15s}
+.pub-inline:hover{background:rgba(0,200,83,0.15);border-color:rgba(0,200,83,0.6);color:var(--green)}
+
+/* EXPERIENCE */
+.exp-item{display:grid;grid-template-columns:260px 1fr;border-bottom:1px solid var(--border)}
+.exp-l{padding:22px 20px 22px 0;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:5px}
+.exp-period{font-size:16px;color:var(--white);letter-spacing:0.04em;white-space:nowrap}
+.exp-co{font-size:18px;font-weight:700;color:var(--amber);letter-spacing:0.02em;line-height:1.25}
+.exp-type{font-size:16px;color:var(--white)}
+.exp-r{padding:22px 0 22px 24px}
+.exp-role{font-size:18px;font-weight:600;color:var(--white);margin-bottom:10px}
+.exp-desc{font-size:16px;font-weight:400;color:var(--white);line-height:1.8;margin-bottom:0}
+.exp-desc ul{margin-left:18px;display:flex;flex-direction:column;gap:8px}
+.exp-desc li{list-style:disc;padding-left:4px}
+.exp-desc strong{color:#E8E8E8;font-weight:600}
+.subhead{color:var(--amber-b) !important;font-weight:700 !important}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tg{font-size:15px;letter-spacing:0.04em;padding:4px 10px;background:rgba(255,140,0,0.06);border:1px solid var(--amber-d);color:var(--amber);font-weight:700}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.sk-panel{background:var(--bg);padding:28px}
+.sk-panel-t{font-size:18px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border2)}
+.sk-rows{display:flex;flex-direction:column;gap:10px}
+.sk-row{display:flex;align-items:center;font-size:15px}
+.sk-n{color:var(--white);font-size:16px;font-weight:400}
+
+/* BLOG */
+.blog-item{display:grid;grid-template-columns:110px 1fr auto;padding:16px 0;border-bottom:1px solid var(--border);align-items:start;cursor:default;transition:background .15s}
+.blog-item:hover{background:#0F0F0F;margin:0 -40px;padding-left:40px;padding-right:40px}
+.blog-ts{font-size:14px;color:var(--white);padding-top:2px;letter-spacing:0.04em}
+.blog-t{font-size:17px;font-weight:500;color:var(--white);margin-bottom:4px;line-height:1.3}
+.blog-ex{font-size:15px;font-weight:400;color:var(--white);line-height:1.65}
+.blog-badge{font-size:13px;letter-spacing:0.06em;padding:4px 10px;background:rgba(0,200,83,0.08);border:1px solid rgba(0,200,83,0.2);color:var(--green);white-space:nowrap}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-lead{font-size:16px;color:var(--white);font-weight:400;line-height:1.85;margin-bottom:24px}
+.contact-lead em{color:var(--amber);font-style:normal}
+.cl-list{display:flex;flex-direction:column;gap:2px}
+.cl{display:flex;align-items:center;gap:14px;padding:13px 16px;background:var(--panel);border:1px solid var(--border2);text-decoration:none;color:var(--white);transition:border-color .15s,background .15s}
+.cl:hover{border-color:var(--amber);background:rgba(255,140,0,0.04)}
+.cl-k{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim);width:84px}
+.cl-v{font-size:15px;color:var(--amber);font-weight:500;flex:1}
+.cl-arr{color:var(--amber);font-size:16px;opacity:0;transition:opacity .15s}
+.cl:hover .cl-arr{opacity:1}
+.cmdline{background:var(--panel);border:1px solid var(--border2);padding:14px 16px;font-size:14px;margin-top:2px}
+.cmd-p{color:var(--amber)}
+.cmd-in{background:transparent;border:none;outline:none;color:var(--white);font-family:var(--mono);font-size:14px;width:200px}
+.cmd-out{margin-top:8px;font-size:11px;color:var(--green);min-height:16px}
+
+/* ADDITIONAL */
+.additional-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.cert-list{display:flex;flex-direction:column;gap:0}
+.cert-item{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--white);font-weight:400}
+.cert-item em{color:var(--amber);font-style:normal}
+.interest-list{display:flex;flex-direction:column;gap:0}
+.int-item{padding:8px 0;border-bottom:1px solid var(--border);font-size:16px;color:var(--white);font-weight:400;display:flex;align-items:baseline;gap:12px}
+.int-label{color:var(--dim);font-size:16px;letter-spacing:0.06em;text-transform:uppercase;width:120px;flex-shrink:0}
+
+footer{padding:14px 40px;display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--white);border-top:1px solid var(--border)}
+.status-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;margin-right:5px}
+
+#tweaks-panel{display:none;position:fixed;bottom:20px;right:20px;background:var(--panel);border:1px solid var(--amber-d);padding:18px;width:230px;z-index:999}
+#tweaks-panel.visible{display:block}
+#tweaks-panel h3{font-size:14px;font-weight:700;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;border-bottom:1px solid var(--border2);padding-bottom:7px}
+.tw-row{margin-bottom:12px}
+.tw-row label{display:block;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.tw-row select{width:100%;padding:6px 10px;background:var(--bg);border:1px solid var(--border2);color:var(--white);font-family:var(--mono);font-size:14px;cursor:pointer}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .about-grid,.contact-grid,.additional-grid{grid-template-columns:1fr}
+  .exp-item{grid-template-columns:1fr}
+  .exp-l{border-right:none;border-bottom:1px solid var(--border);padding-bottom:10px}
+  .blog-item{grid-template-columns:1fr}
+  .sec-body{padding:24px 20px}
+  footer{padding:14px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="tb-left">
+    <span class="tb-logo">PORTFOLIO TERMINAL</span>
+    <span class="tb-sep tb-hide-sm">|</span>
+    <span class="tb-name tb-hide-sm">ANMAYA AGARWAL</span>
+    <span class="tb-sep tb-hide-xs">|</span>
+    <span class="tb-subtitle tb-hide-xs">CMU MSCF · JPMorgan QBSS (Quantitative Balance Sheet Strategies)</span>
+  </div>
+  <div class="tb-right">
+    <span id="tb-date"></span>
+    <span id="tb-time"></span>
+  </div>
+</div>
+
+<div class="ticker-wrap">
+  <div class="ticker-label"><span class="live-dot"></span>LIVE</div>
+  <div class="ticker-track"><div class="ticker-inner" id="ticker-inner"></div></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-term-btn" id="nav-term-btn" title="Press / to open">SEARCH&nbsp;[/]</div>
+  <a class="nav-item" href="#about"><span class="nav-fn">ABOUT</span><span class="nav-go">&lt;GO&gt;</span></a>
+  <a class="nav-item" href="#education"><span class="nav-fn">EDUCATION</span><span class="nav-go">&lt;GO&gt;</span></a>
+  <a class="nav-item" href="#experience"><span class="nav-fn">EXPERIENCE</span><span class="nav-go">&lt;GO&gt;</span></a>
+  <a class="nav-item" href="#competitions"><span class="nav-fn">COMPETITIONS</span><span class="nav-go">&lt;GO&gt;</span></a>
+  <a class="nav-item" href="#skills"><span class="nav-fn">SKILLS</span><span class="nav-go">&lt;GO&gt;</span></a>
+  <a class="nav-item" href="#contact"><span class="nav-fn">CONTACT</span><span class="nav-go">&lt;GO&gt;</span></a>
+</nav>
+<div id="cmd-palette">
+  <div class="pal-row">
+    <span class="pal-prompt">&gt;</span>
+    <input class="pal-input" id="pal-input" type="text" placeholder="type a command... try 'help'" autocomplete="off" spellcheck="false">
+    <span class="pal-esc">ESC TO CLOSE</span>
+  </div>
+  <div class="pal-out" id="pal-out"></div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-path"><span class="p-fn">TERMINAL</span> / PORTFOLIO / <span class="p-fn">ANMAYA.A</span></div>
+    <div class="hero-name">ANMAYA AGARWAL<span class="cursor"></span></div>
+    <div class="hero-title">Quantitative Researcher &nbsp;·&nbsp; Carnegie Mellon MSCF</div>
+    <div class="fields">
+      <div class="field"><span class="fk">ROLE</span><span class="fv green">Incoming Summer Associate, JPMorgan QBSS (Quantitative Balance Sheet Strategies)</span></div>
+      <div class="field"><span class="fk">LOCATION</span><span class="fv">Chicago, IL &nbsp;·&nbsp; Summer 2026</span></div>
+      <div class="field"><span class="fk">PROGRAM</span><span class="fv">MS Computational Finance, CMU Tepper</span></div>
+      <div class="field"><span class="fk">FOCUS</span><span class="fv">Market Microstructure, Derivatives, Factor Models, Market Making</span></div>
+      <div class="field"><span class="fk">EMAIL</span><span class="fv" style="color:var(--amber)">anagarwa(at)andrew.cmu.edu</span></div>
+      <div class="field"><span class="fk">LINKEDIN</span><span class="fv"><a href="https://www.linkedin.com/in/anmaya-agarwal/" target="_blank">linkedin.com/in/anmaya-agarwal ↗</a></span></div>
+      <div class="field"><span class="fk">GITHUB</span><span class="fv"><a href="https://github.com/Anmaya1856" target="_blank">github.com/Anmaya1856 ↗</a></span></div>
+    </div>
+    <div class="hero-btns">
+      <a href="data/anmaya_agarwal_resume.pdf" target="_blank" class="btn btn-g">RESUME →</a>
+    </div>
+  </div>
+  
+  <div class="hero-right">
+    <div class="chart-hdr">
+        <div class="cf-item"><div class="cf-k">INDEX</div><div class="cf-v a">S&amp;P 500 <span class="live-badge">LIVE</span></div></div>
+        <div class="cf-item"><div class="cf-k">INTERVAL</div><div class="cf-v">1 DAY</div></div>
+        <div class="cf-item"><div class="cf-k">SOURCE</div><div class="cf-v g">TRADINGVIEW</div></div>
+    </div>
+    <div class="chart-tv-wrap" style="flex:1;min-height:280px;filter:saturate(0.85) brightness(0.92)">
+      <div class="tradingview-widget-container" style="height:100%;width:100%">
+        <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+        {
+          "autosize": true,
+          "symbol": "SPX",
+          "interval": "D",
+          "timezone": "America/New_York",
+          "theme": "dark",
+          "style": "2",
+          "locale": "en",
+          "backgroundColor": "rgba(13, 13, 13, 1)",
+          "gridColor": "rgba(28, 28, 28, 0.8)",
+          "hide_top_toolbar": true,
+          "hide_legend": true,
+          "hide_side_toolbar": true,
+          "allow_symbol_change": false,
+          "save_image": false,
+          "calendar": false,
+          "hide_volume": false,
+          "support_host": "https://www.tradingview.com"
+        }
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about" data-screen-label="01 About">
+  <div class="sec-hdr">
+    <span class="sec-fn">ABOUT</span>
+    <span class="sec-name">Biographical Data</span>
+
+  </div>
+  <div class="sec-body">
+    <div>
+      <ul class="about-bullets">
+        <li>Incoming <strong>Summer Associate at JPMorgan's Quantitative Balance Sheet Strategies (QBSS) team</strong> in Chicago (Summer 2026), and a current MSCF student at Carnegie Mellon University's Tepper School of Business — recipient of the <strong>MSCF Distinguished Merit Scholarship</strong>.</li>
+        <li>As a research assistant at the <strong>India Gold Policy Centre, IIM Ahmedabad</strong>, I co-authored an award-winning case study on bullion banking at Scotiabank — recipient of the <strong>2024–25 IIMA Endowment Fund Case Award</strong>. Used comprehensive trade data analysis to compare gold market models across India, Switzerland, and Japan, proposing strategic solutions for India's Current Account Deficit.</li>
+        <li>With a foundation in Computer Engineering and an MBA in Technology Management from NMIMS University (Dean's List), I combine Python and statistical modeling with financial market knowledge. My research interests span <strong>commodity markets, quantitative trading strategies, and market microstructure</strong>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education" data-screen-label="02 Education">
+  <div class="sec-hdr">
+    <span class="sec-fn">EDUCATION</span>
+    <span class="sec-name">Academic Background</span>
+
+  </div>
+  <div class="sec-body" style="padding:0">
+    <div class="exp-item">
+      <div class="exp-l" style="padding-left:40px">
+        <div class="exp-period">GRAD. 12/2026</div>
+        <div class="exp-co">CARNEGIE MELLON UNIVERSITY</div>
+        <div class="exp-type">PITTSBURGH, PA</div>
+      </div>
+      <div class="exp-r" style="padding-right:40px">
+        <div class="exp-role">Master of Science in Computational Finance (MSCF) &nbsp;·&nbsp; <span style="color:var(--green);">CGPA: 3.63 / 4.00</span></div>
+        <div class="exp-desc">
+          <ul style="margin-left:18px;display:flex;flex-direction:column;gap:8px">
+            <li>Received the <strong>MSCF Distinguished Merit Scholarship</strong>.</li>
+            <li><strong class="subhead">Coursework:</strong> Stochastic Calculus, Simulation Methods, Fixed Income, Financial Data Science, Machine Learning.</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tg">Stochastic Calculus</span><span class="tg">Fixed Income</span><span class="tg">Machine Learning</span></div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-l" style="padding-left:40px">
+        <div class="exp-period">GRAD. 05/2024</div>
+        <div class="exp-co">NMIMS UNIVERSITY</div>
+        <div class="exp-type">MUMBAI, INDIA</div>
+      </div>
+      <div class="exp-r" style="padding-right:40px">
+        <div class="exp-role">MBA (Technology Management &amp; Finance) + Bachelor of Technology (B.Tech) (Computer Science) &nbsp;·&nbsp; <span style="color:var(--green);">CGPA: 3.85 / 4.00</span></div>
+        <div class="exp-desc">
+          <ul style="margin-left:18px;display:flex;flex-direction:column;gap:8px">
+            <li><strong class="subhead">Dean's List</strong> — top 10% of class.</li>
+            <li>Co-founded the CodeChef Society for Competitive Programming, growing to 100+ members.</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tg">Finance</span><span class="tg">Technology Management</span><span class="tg">Computer Science</span><span class="tg">Dean's List</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience" data-screen-label="03 Experience">
+  <div class="sec-hdr">
+    <span class="sec-fn">EXPERIENCE</span>
+    <span class="sec-name">Work History</span>
+
+  </div>
+  <div class="sec-body" style="padding:0">
+    <div class="exp-item">
+      <div class="exp-l" style="padding-left:40px">
+        <div class="exp-period">06/2026 – 08/2026</div>
+        <div class="exp-co">JPMORGAN CHASE</div>
+        <div class="exp-type">CHICAGO, IL</div>
+      </div>
+      <div class="exp-r" style="padding-right:40px">
+        <div class="exp-role">Summer Associate — Quantitative Balance Sheet Strategies (QBSS)</div>
+        <div class="exp-desc">Incoming Summer Associate on the Quantitative Balance Sheet Strategies (QBSS) team in Chicago.</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-l" style="padding-left:40px">
+        <div class="exp-period">07/2024 – 04/2025</div>
+        <div class="exp-co">INDIA GOLD POLICY CENTRE, IIM AHMEDABAD</div>
+        <div class="exp-type">AHMEDABAD, INDIA</div>
+      </div>
+      <div class="exp-r" style="padding-right:40px">
+        <div class="exp-role">Research Assistant</div>
+        <div class="exp-desc">
+          <ul>
+            <li><strong class="subhead">International Gold Trade Analysis:</strong> Co-authored an IIMA working paper titled "Strategic Acquisition and Value Addition of Gold Resources for India," which proposes strategic solutions to reduce India's Current Account Deficit for gold by analyzing granular 8-digit trade classification data on gold and gold-extraction-related items from Japan and Switzerland. <a href="https://www.iima.ac.in/publication/strategic-acquisition-and-value-addition-gold-resources-india" target="_blank" class="pub-inline">↗ WORKING PAPER</a></li>
+            <li><strong class="subhead">Risk Management Case Study:</strong> Co-authored an IIMA case study "The Rise and Fall of Bullion Banking at Scotiabank," examining management, reputation and derivatives exposure failures in precious metals trading and banking. <a href="https://cases.iima.ac.in/index.php/the-rise-and-fall-of-bullion-banking-at-scotiabank.html" target="_blank"class="pub-inline">↗ CASE STUDY</a></li>
+            <li><strong class="subhead">Data Infrastructure Development:</strong> Designed a comprehensive Gold Data Hub by automating the extraction of data from 8+ sources using Python, enhancing visualization through Power BI dashboards, and saving 3–5 hours of manual work weekly. <a href="https://app.powerbi.com/view?r=eyJrIjoiYmIwYjVmZWItNjIyMC00YzMzLWI4NTgtMTEwYWM3ODhhOWVlIiwidCI6IjViNjdjODg2LTFhMjYtNDk4OC1hNzY3LTEwOTQzZTRkMTA2YyIsImMiOjEwfQ%3D%3D&pageName=430e40102753ed3900b6" target="_blank"class="pub-inline">↗ DASHBOARD</a></li>
+            <li><strong class="subhead">Achievements:</strong> Earned 2024–25 IIMA Endowment Fund Case Award and Best Research Presentation Award at IMRC 2024. <a href="https://www.iima.ac.in/sites/default/files/2026-03/Annual%20Report%20English.pdf" target="_blank"class="pub-inline">↗ ANNUAL REPORT (PAGE 122)</a></li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tg">Python</span><span class="tg">Power BI</span><span class="tg">Trade Data Analysis</span></div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-l" style="padding-left:40px">
+        <div class="exp-period">07/2023 – 09/2023</div>
+        <div class="exp-co">PIRAMAL CAPITAL &amp; HOUSING FINANCE</div>
+        <div class="exp-type">MUMBAI, INDIA</div>
+      </div>
+      <div class="exp-r" style="padding-right:40px">
+        <div class="exp-role">Data Analyst Intern</div>
+        <div class="exp-desc">
+          <ul>
+            <li><strong class="subhead">Multifactor Sectoral Forecasting:</strong> Developed regression-based factor models for 7 sectoral indices, leveraging Granger Causality to identify leading macroeconomic indicators and isolate significant predictive signals from noise.</li>
+            <li><strong class="subhead">Dimensionality Reduction:</strong> Implemented a systematic feature selection pipeline using Correlation Analysis and Multicollinearity thresholds (VIF), reducing the feature space by approximately 80–90% to mitigate overfitting.</li>
+          </ul>
+        </div>
+        <div class="tags"><span class="tg">Python</span><span class="tg">Factor Models</span><span class="tg">Regression</span><span class="tg">Granger Causality</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITIONS -->
+<section class="section" id="competitions" data-screen-label="04 Competitions">
+  <div class="sec-hdr">
+    <span class="sec-fn">COMPETITIONS</span>
+    <span class="sec-name">Trading &amp; Forecasting Competitions</span>
+
+  </div>
+  <div class="sec-body" style="padding:0">
+    <div class="rsch-item">
+      <div class="rsch-n">01</div>
+      <div class="rsch-b">
+        <div class="rsch-title">Bridgewater x Metaculus Forecasting Contest 2026</div>
+        <div class="rsch-desc">
+          <ul style="margin-left:18px;display:flex;flex-direction:column;gap:8px">
+            <li><strong class="subhead">Probabilistic Forecasting:</strong> Ranked 55th globally (Top 2 Percentile) by modeling accurate probability distributions for macroeconomic events; continuously calibrated predictions to account for incoming market data and geopolitical signals.</li>
+          </ul>
+        </div>
+        <div class="rsch-foot"><span class="rank-badge">RANK 55 / 2867 &nbsp;·&nbsp; TOP 2%</span></div>
+      </div>
+    </div>
+    <div class="rsch-item">
+      <div class="rsch-n">02</div>
+      <div class="rsch-b">
+        <div class="rsch-title">Rotman International Trading Competition</div>
+        <div class="rsch-desc">
+          <ul style="margin-left:18px;display:flex;flex-direction:column;gap:8px">
+            <li><strong class="subhead">Algorithmic Market Making:</strong> Ranked 10th by engineering a high-frequency trading strategy using asyncio to minimize API latency; implemented dynamic bid-ask skewing based on micro-price signals and inventory risk while managing exposure through a real-time shadow order tracking system.</li>
+            <li><strong class="subhead">Mergers &amp; Acquisitions Arbitrage:</strong> Leveraged FinBERT sentiment analysis to quantify deal completion probabilities and executed a systematic strategy by identifying spreads between internally calculated theoretical outcomes and market-implied probabilities.</li>
+            <li><strong class="subhead">Algorithmic ETF Arbitrage:</strong> Achieved Rank 1 by combining ETF arbitrage with market making, executing dynamic price quoting based on fair value, inventory risk, and market microstructure signals like order book imbalance.</li>
+            <li><strong class="subhead">Volatility Trading:</strong> Identified mispricing opportunities between analyst forecasts and market implied volatility of options to profit from volatility differentials while managing portfolio risk within delta limits.</li>
+          </ul>
+        </div>
+        <div class="rsch-foot"><span class="rank-badge">RANK 10 / GLOBAL &nbsp;·&nbsp; MARKET MAKING</span> <span class="rank-badge">RANK 1 / CMU &nbsp;·&nbsp; ETF ARB</span></div>
+      </div>
+    </div>
+    <div class="rsch-item">
+      <div class="rsch-n">03</div>
+      <div class="rsch-b">
+        <div class="rsch-title">Algorithmic Debt Simplification Engine</div>
+        <div class="rsch-desc">
+          <ul style="margin-left:18px;display:flex;flex-direction:column;gap:8px">
+            <li><strong class="subhead">Performance Benchmarking:</strong> Engineered an approximation for a variation of the NP-Complete "Zero-Sum Set Packing" problem, benchmarked performance across four solvers including Mixed Integer Linear Programming (Gurobi), Randomized Greedy (Monte Carlo), Simple Greedy, and a custom Layered Approximation heuristic. <a href="https://github.com/Anmaya1856/Debt-Minimizer" target="_blank"class="pub-inline">↗ GitHub</a></li>
+            <li><strong class="subhead">Optimization &amp; App Integration:</strong> Achieved sub-second latency on 10,000+ simulated users with &gt;5% superior edge minimization over greedy baselines, integrating the solver into the backend of "Divy" (live iOS/Android app). <a href="https://www.hellodivy.com/" target="_blank"class="pub-inline">↗ Divy</a></li>
+          </ul>
+        </div>
+        <div class="rsch-foot"><span class="rank-badge">Python</span><span class="rank-badge">Gurobi</span><span class="rank-badge">Monte Carlo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SKILLS -->
+<section class="section" id="skills" data-screen-label="06 Skills">
+  <div class="sec-hdr">
+    <span class="sec-fn">SKILLS</span>
+    <span class="sec-name">Technical Skills &amp; Tools</span>
+
+  </div>
+  <div class="sec-body" style="padding:0">
+    <div class="skills-grid">
+      <div class="sk-panel">
+        <div class="sk-panel-t">Languages</div>
+        <div class="sk-rows">
+          <div class="sk-row"><span class="sk-n">Python</span></div>
+          <div class="sk-row"><span class="sk-n">SQL</span></div>
+          <div class="sk-row"><span class="sk-n">Excel / VBA</span></div>
+          <div class="sk-row"><span class="sk-n">Power BI</span></div>
+          <div class="sk-row"><span class="sk-n">LaTeX</span></div>
+        </div>
+      </div>
+      <div class="sk-panel">
+        <div class="sk-panel-t">Python Libraries</div>
+        <div class="sk-rows">
+          <div class="sk-row"><span class="sk-n">NumPy / SciPy</span></div>
+          <div class="sk-row"><span class="sk-n">Pandas</span></div>
+          <div class="sk-row"><span class="sk-n">asyncio</span></div>
+          <div class="sk-row"><span class="sk-n">statsmodels</span></div>
+        </div>
+      </div>
+      <div class="sk-panel">
+        <div class="sk-panel-t">Finance Domain</div>
+        <div class="sk-rows">
+          <div class="sk-row"><span class="sk-n">Derivatives</span></div>
+          <div class="sk-row"><span class="sk-n">Fixed Income</span></div>
+          <div class="sk-row"><span class="sk-n">Market Making</span></div>
+          <div class="sk-row"><span class="sk-n">Factor Models</span></div>
+        </div>
+      </div>
+      <div class="sk-panel">
+        <div class="sk-panel-t">Certifications</div>
+        <div class="sk-rows">
+          <div class="sk-row"><span class="sk-n">Bloomberg Market Concepts</span></div>
+          <div class="sk-row"><span class="sk-n">Akuna Capital Options 201</span></div>
+          <div class="sk-row"><span class="sk-n">Akuna Capital Options 101</span></div>
+          <div class="sk-row"><span class="sk-n">NISM Series XV — Research Analyst</span></div>
+          <div class="sk-row"><span class="sk-n">NISM Series VIII — Equity Derivatives</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact" data-screen-label="07 Contact">
+  <div class="sec-hdr">
+    <span class="sec-fn">CONTACT</span>
+    <span class="sec-name">Get In Touch</span>
+
+  </div>
+  <div class="sec-body">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-lead">
+          I'm always interested in connecting with people working on interesting problems at the intersection of <em>mathematics and markets</em>. Reach out for research discussions, opportunities, or just to talk quant.
+        </div>
+        <div class="cl-list">
+          <div class="cl">
+            <span class="cl-k">EMAIL</span>
+            <span class="cl-v">anagarwa(at)andrew.cmu.edu</span>
+            <span class="cl-arr">→</span>
+          </div>
+          <a href="https://www.linkedin.com/in/anmaya-agarwal/" target="_blank" class="cl">
+            <span class="cl-k">LINKEDIN</span>
+            <span class="cl-v">linkedin.com/in/anmaya-agarwal</span>
+            <span class="cl-arr">→</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-lead" style="color:var(--dim)">Or try the terminal:</div>
+        <div class="cmdline">
+          <div><span class="cmd-p">terminal:~$</span> <input class="cmd-in" id="cmd-input" type="text" placeholder="type 'help'" autocomplete="off" spellcheck="false"></div>
+          <div class="cmd-out" id="cmd-out"></div>
+        </div>
+        <div style="margin-top:24px">
+          <div class="sk-panel-t">Interests</div>
+          <div class="int-item"><span class="int-label"><strong class="subhead">Puzzles</strong></span>  Jane Street Feb 2026 Puzzle</div>
+          <div class="int-item"><span class="int-label"><strong class="subhead">Sports</strong></span>  Squash — National Level</div>
+          <div class="int-item"><span class="int-label"><strong class="subhead">Photography</strong></span>  Landscape &amp; Wildlife</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div><span class="status-dot"></span>ANMAYA AGARWAL &nbsp;·&nbsp; PORTFOLIO TERMINAL &nbsp;·&nbsp; Updated May 2026</div>
+  <div style="display:flex;gap:16px;font-size:14px;color:var(--white)">
+    <span>CMU MSCF</span>
+    <span id="footer-time"></span>
+  </div>
+</footer>
+
+<div id="tweaks-panel">
+  <h3>Tweaks</h3>
+  <div class="tw-row">
+    <label>Accent Color</label>
+    <select id="tw-accent">
+      <option value="amber" selected>Amber (Bloomberg)</option>
+      <option value="green">Green (Matrix)</option>
+      <option value="blue">Blue (Quant)</option>
+    </select>
+  </div>
+  <div class="tw-row">
+    <label>Scanlines</label>
+    <select id="tw-scan">
+      <option value="on" selected>On</option>
+      <option value="off">Off</option>
+    </select>
+  </div>
+</div>
+
+<script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"accent": "amber", "scanlines": "on"}/*EDITMODE-END*/;
+let tweaks = {...TWEAK_DEFAULTS};
+
+// ── Clock ─────────────────────────────────────────────────────────────────
+function updateClock() {
+  const now = new Date();
+  const d = now.toLocaleDateString('en-US',{month:'short',day:'2-digit',year:'numeric'}).toUpperCase();
+  const t = now.toLocaleTimeString('en-US',{hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  document.getElementById('tb-date').textContent = d;
+  document.getElementById('tb-time').textContent = t;
+  document.getElementById('footer-time').textContent = t;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── Ticker ────────────────────────────────────────────────────────────────
+const STATIC_TICKS = [
+  {s:'SPX',v:'5,127.79',c:'+0.43%',up:true},
+  {s:'NDX',v:'17,984.23',c:'+0.61%',up:true},
+  {s:'VIX',v:'18.24',c:'-2.31%',up:false},
+  {s:'US10Y',v:'4.47%',c:'+0.02',up:true},
+  {s:'EURUSD',v:'1.0731',c:'-0.12%',up:false},
+  {s:'GBPUSD',v:'1.2843',c:'+0.08%',up:true},
+  {s:'USDJPY',v:'154.23',c:'+0.31%',up:true},
+  {s:'GOLD',v:'2,341.50',c:'+0.15%',up:true},
+  {s:'WTI',v:'82.15',c:'-0.44%',up:false},
+  {s:'BTC',v:'67,234',c:'+1.23%',up:true},
+  {s:'ETH',v:'3,487',c:'+0.88%',up:true},
+  {s:'TLT',v:'93.14',c:'+0.32%',up:true},
+  {s:'HYG',v:'77.82',c:'-0.15%',up:false},
+  {s:'GLD',v:'218.43',c:'+0.19%',up:true},
+  {s:'IVV',v:'511.20',c:'+0.41%',up:true},
+];
+
+let tickData = STATIC_TICKS.map(t=>({...t}));
+
+function renderTicker() {
+  const items = [...tickData,...tickData].map(t=>`
+    <div class="ti">
+      <span class="ts">${t.s}</span>
+      <span class="tv">${t.v}</span>
+      <span class="tc ${t.up?'up':'dn'}">${t.c}</span>
+    </div>`).join('');
+  document.getElementById('ticker-inner').innerHTML = items;
+}
+
+// Try live data: direct Yahoo → allorigins proxy → corsproxy.io → jitter fallback
+async function fetchTickerData() {
+  const symbols = ['^GSPC','^NDX','^VIX','GC=F','BTC-USD','EURUSD=X','^TNX','GLD','TLT','HYG','IVV','CL=F','ETH-USD'];
+  const yfPath = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(symbols.join(','))}`;
+  const proxies = [
+    yfPath,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(yfPath)}`,
+    `https://corsproxy.io/?${encodeURIComponent(yfPath)}`,
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(yfPath)}`,
+  ];
+  for (const url of proxies) {
+    try {
+      const res = await fetch(url, {signal: AbortSignal.timeout(4000)});
+      if (!res.ok) continue;
+      const json = await res.json();
+      const quotes = json?.quoteResponse?.result || [];
+      if (!quotes.length) continue;
+      tickData = quotes.map(q => {
+        const chg = q.regularMarketChangePercent || 0;
+        const up = chg >= 0;
+        const val = q.regularMarketPrice || 0;
+        const fmt = val >= 1000 ? val.toLocaleString('en-US',{maximumFractionDigits:2}) : val.toFixed(2);
+        const sym = q.symbol.replace('^','').replace('=F','').replace('-USD','').replace('=X','');
+        return {s: sym, v: fmt, c: (up?'+':'')+chg.toFixed(2)+'%', up};
+      });
+      renderTicker();
+      return; // success — stop trying
+    } catch(e) { /* try next proxy */ }
+  }
+  // All proxies failed — jitter static data
+  tickData = tickData.map(t => {
+    const delta = (Math.random()-0.5)*0.004;
+    const baseNum = parseFloat(t.v.replace(/,/g,''));
+    if(isNaN(baseNum)) return t;
+    const newVal = baseNum*(1+delta);
+    const fmt = newVal>=1000 ? newVal.toLocaleString('en-US',{maximumFractionDigits:2}) : newVal.toFixed(2);
+    const pct = parseFloat(t.c)+(delta*100);
+    const up = pct>=0;
+    return {...t, v:fmt, c:(up?'+':'')+pct.toFixed(2)+'%', up};
+  });
+  renderTicker();
+}
+
+renderTicker();
+fetchTickerData();
+setInterval(fetchTickerData, 30000);
+
+// ── Command Palette (top nav) ─────────────────────────────────────────────
+const palette = document.getElementById('cmd-palette');
+const palInput = document.getElementById('pal-input');
+const palOut = document.getElementById('pal-out');
+
+function openPalette() {
+  palette.classList.add('open');
+  palInput.focus();
+  palInput.value = '';
+  palOut.style.display = 'none';
+  // shift main content down
+  document.querySelector('main').style.paddingTop = '80px';
+}
+function closePalette() {
+  palette.classList.remove('open');
+  palOut.style.display = 'none';
+}
+document.getElementById('nav-term-btn').addEventListener('click', () => {
+  palette.classList.contains('open') ? closePalette() : openPalette();
+});
+document.addEventListener('keydown', e => {
+  if(e.key === '/' && document.activeElement.tagName !== 'INPUT') { e.preventDefault(); openPalette(); }
+  if(e.key === 'Escape') closePalette();
+});
+
+// ── Command Line ──────────────────────────────────────────────────────────
+const CMD_MAP = {
+  help: 'Commands: about | education | experience | competitions | skills | contact | clear | whoami | ls',
+  about: 'Anmaya Agarwal — Incoming Summer Associate, JPMorgan QBSS (Quantitative Balance Sheet Strategies). MSCF, Carnegie Mellon. MSCF Distinguished Merit Scholar.',
+  education: 'CMU MSCF (CGPA 3.63, Merit Scholarship) · NMIMS Dual Degree MBA+BTech (CGPA 3.85, Dean\'s List)',
+  experience: 'JPMorgan QBSS — Quantitative Balance Sheet Strategies (incoming) · IIM Ahmedabad IGPC (Research Asst.) · Piramal Capital (Data Analyst)',
+  competitions: 'Bridgewater x Metaculus: Rank 55/2867 (top 2%). Rotman: Rank 10 global (market making), Rank 1 CMU (ETF arb).',
+
+  skills: 'Python · SQL · Pandas/NumPy · Fixed Income · Derivatives · Market Making · Factor Models · Power BI',
+  contact: 'Email: anagarwa(at)andrew.cmu.edu | LinkedIn: linkedin.com/in/anmaya-agarwal | GitHub: github.com/Anmaya1856',
+  whoami: 'ANMAYA AGARWAL — QUANT RESEARCHER — CMU MSCF — JPM QBSS INCOMING',
+  ls: 'about/  education/  experience/  competitions/  skills/  contact/',
+  clear: null,
+};
+const cmdInput = document.getElementById('cmd-input');
+const cmdOut = document.getElementById('cmd-out');
+
+function runCmd(v, outEl, errColor) {
+  if(v === 'clear') { outEl.textContent=''; outEl.style.color='var(--green)'; return; }
+  const res = CMD_MAP[v];
+  if(res !== undefined) { outEl.textContent = '> ' + res; outEl.style.color='var(--green)'; }
+  else if(v) { outEl.textContent = `> command not found: ${v}. type 'help'.`; outEl.style.color='var(--red)'; }
+}
+
+// Palette input
+palInput.addEventListener('keydown', e => {
+  if(e.key === 'Enter') {
+    const v = palInput.value.trim().toLowerCase();
+    palInput.value = '';
+    if(v) {
+      palOut.style.display = 'block';
+      runCmd(v, palOut);
+      // also handle nav shortcuts
+      const navMap = {about:'#about',education:'#education',experience:'#experience',competitions:'#competitions',skills:'#skills',contact:'#contact'};
+      if(navMap[v]) { closePalette(); document.querySelector(navMap[v]).scrollIntoView(); }
+    }
+  }
+  if(e.key === 'Escape') closePalette();
+});
+
+cmdInput.addEventListener('keydown', e => {
+  if(e.key === 'Enter') {
+    const v = cmdInput.value.trim().toLowerCase();
+    cmdInput.value = '';
+    runCmd(v, cmdOut);
+  }
+});
+
+// ── Tweaks ────────────────────────────────────────────────────────────────
+const PALETTES = {
+  amber: {a:'#FF8C00',ab:'#FFB347',ad:'#5A3200'},
+  green: {a:'#00C853',ab:'#69F0AE',ad:'#00401A'},
+  blue:  {a:'#2979FF',ab:'#82B1FF',ad:'#0039CB'},
+};
+function applyTweaks() {
+  const p = PALETTES[tweaks.accent] || PALETTES.amber;
+  document.documentElement.style.setProperty('--amber', p.a);
+  document.documentElement.style.setProperty('--amber-b', p.ab);
+  document.documentElement.style.setProperty('--amber-d', p.ad);
+}
+document.getElementById('tw-accent').value = tweaks.accent;
+document.getElementById('tw-scan').value = tweaks.scanlines;
+document.getElementById('tw-accent').addEventListener('change', e => {
+  tweaks.accent = e.target.value; applyTweaks();
+  window.parent.postMessage({type:'__edit_mode_set_keys',edits:{accent:tweaks.accent}},'*');
+});
+document.getElementById('tw-scan').addEventListener('change', e => {
+  tweaks.scanlines = e.target.value;
+  document.body.style.setProperty('--scan-opacity', tweaks.scanlines==='off'?'0':'1');
+  window.parent.postMessage({type:'__edit_mode_set_keys',edits:{scanlines:tweaks.scanlines}},'*');
+});
+window.addEventListener('message', e => {
+  if(e.data?.type==='__activate_edit_mode') document.getElementById('tweaks-panel').classList.add('visible');
+  if(e.data?.type==='__deactivate_edit_mode') document.getElementById('tweaks-panel').classList.remove('visible');
+});
+window.parent.postMessage({type:'__edit_mode_available'},'*');
+applyTweaks();
+</script>
+</body>
 </html>
