@@ -39,7 +39,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 #tb-time{font-weight:700;letter-spacing:0.08em}
 
 /* TICKER */
-.ticker-wrap{position:fixed;top:34px;left:0;right:0;z-index:199;height:28px;background:#0A0A0A;border-bottom:1px solid var(--amber-d);overflow:hidden;display:flex;align-items:center}
+.ticker-wrap{position:fixed;top:34px;left:0;right:0;z-index:199;height:28px;background:#0A0A0A;border-bottom:1px solid var(--amber-d);overflow:hidden;display:none;align-items:center}
 .ticker-label{flex-shrink:0;padding:0 12px;font-size:14px;letter-spacing:0.12em;color:#000;background:var(--amber);height:100%;display:flex;align-items:center;font-weight:700;border-right:2px solid rgba(0,0,0,0.2);gap:6px}
 .live-dot{width:6px;height:6px;border-radius:50%;background:#000;animation:pulse 1.5s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.25}}
@@ -53,7 +53,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .tc.dn{color:var(--red)}
 
 /* NAV */
-.nav{position:fixed;top:62px;left:0;right:0;z-index:198;height:36px;background:var(--panel);border-bottom:1px solid var(--border2);display:flex;align-items:center;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--amber-d) transparent}
+.nav{position:fixed;top:34px;left:0;right:0;z-index:198;height:36px;background:var(--panel);border-bottom:1px solid var(--border2);display:flex;align-items:center;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--amber-d) transparent}
 .nav::-webkit-scrollbar{height:2px}
 .nav::-webkit-scrollbar-thumb{background:var(--amber-d)}
 .nav-item{flex-shrink:0;height:100%;display:flex;align-items:center;padding:0 12px;font-size:16px;letter-spacing:0.03em;cursor:pointer;border-right:1px solid var(--border);color:var(--white);transition:background .15s,color .15s;text-decoration:none;white-space:nowrap;gap:4px}
@@ -66,7 +66,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .nav-term-btn:hover{background:rgba(255,140,0,0.08)}
 @media(max-width:700px){.nav-go{display:none}.nav-item{padding:0 10px;font-size:12px}}
 /* CMD PALETTE */
-#cmd-palette{position:fixed;top:98px;left:0;right:0;z-index:500;background:var(--panel);border-bottom:2px solid var(--amber);display:none}
+#cmd-palette{position:fixed;top:70px;left:0;right:0;z-index:500;background:var(--panel);border-bottom:2px solid var(--amber);display:none}
 #cmd-palette.open{display:block}
 .pal-row{display:flex;align-items:center;height:44px}
 .pal-prompt{padding:0 14px;color:var(--amber);font-weight:700;font-size:16px;flex-shrink:0}
@@ -74,7 +74,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .pal-esc{padding:0 14px;color:var(--dim);font-size:13px;letter-spacing:0.08em;flex-shrink:0}
 .pal-out{padding:8px 56px 10px;font-size:14px;color:var(--green);border-top:1px solid var(--border);display:none;font-weight:300}
 
-main{padding-top:98px}
+main{padding-top:70px}
 
 /* HERO */
 .hero{display:grid;grid-template-columns:1fr 440px;min-height:calc(100vh - 80px);border-bottom:1px solid var(--border2)}
@@ -119,7 +119,7 @@ main{padding-top:98px}
 
 /* SECTION CHROME */
 .section{border-bottom:1px solid var(--border2)}
-.sec-hdr{padding:0 24px;height:40px;background:var(--panel);border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:14px;font-size:14px;letter-spacing:0.06em;position:sticky;top:98px;z-index:10}
+.sec-hdr{padding:0 24px;height:40px;background:var(--panel);border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:14px;font-size:14px;letter-spacing:0.06em;position:sticky;top:70px;z-index:10}
 .sec-fn{color:var(--amber);font-weight:700;background:rgba(255,140,0,0.08);padding:3px 12px;border:1px solid var(--amber-d);font-size:14px;letter-spacing:0.08em;text-transform:uppercase}
 .sec-name{color:var(--white);font-size:14px}
 .sec-hint{margin-left:auto;color:var(--white);font-size:14px}
@@ -293,7 +293,7 @@ footer{padding:14px 40px;display:flex;align-items:center;justify-content:space-b
       <div class="field"><span class="fk">GITHUB</span><span class="fv"><a href="https://github.com/Anmaya1856" target="_blank">github.com/Anmaya1856 ↗</a></span></div>
     </div>
     <div class="hero-btns">
-      <a href="data/anmaya_agarwal_resume.pdf" target="_blank" class="btn btn-g">RESUME →</a>
+      <a href="data/Anmaya_Agarwal_Resume.pdf" target="_blank" class="btn btn-g">RESUME →</a>
     </div>
   </div>
   
@@ -309,7 +309,7 @@ footer{padding:14px 40px;display:flex;align-items:center;justify-content:space-b
         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
         {
           "autosize": true,
-          "symbol": "SPX",
+          "symbol": "SPX500",
           "interval": "D",
           "timezone": "America/New_York",
           "theme": "dark",
